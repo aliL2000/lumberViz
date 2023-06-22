@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='utility.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <h1 class="title">{% block title %} Transactions {% endblock %}</h1>
+    <div class="content">
+      <form method="get" >
+        <label for="field">Column:</label>
+          <select name="field" id="field" onchange='this.form.submit()' val>
+            <option value="open" {% if field == "open" %} selected {% endif %}>Open</option>
+            <option value="high" {% if field == "high" %} selected {% endif %}>High</option>
+            <option value="low" {% if field == "low" %} selected {% endif %}>Low</option>
+            <option value="close" {% if field == "close" %} selected {% endif %}>Close</option>
+            <option value="adjusted_close" {% if field == "adjusted_close" %} selected {% endif %}>Adjusted Close</option>
+            <option value="volume" {% if field == "volume" %} selected {% endif %}>Volume</option>
+          </select>
+      </form>
+    <canvas class="user-view" id="transaction_graph"></canvas>
+    <script >
+      $( document ).ready(function() {
+        const output = render_graph({{ transactions|tojson }},"{{ field }}")
+        render_slider({{ transactions|tojson }},"{{ field }}",output)
+      });
+    </script>
+    <p>
+      <label for="amount">Date range:</label>
+        <input type="text" id="amount" size = 30/>
+    </p>
+    <div class="user-view" id="slider-range"></div>
+    </div>
+  </body>
+</html>
