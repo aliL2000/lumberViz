@@ -2,7 +2,7 @@
 
 I've included some installation instructions below, feel free to contact me if there are any issues:
 
-Run the below lines on a terminal that is located in the OlympicIndustriesTechnical Folder, I'd recommend doing this terminal integrated into an IDE (such as VSCode). 
+Run the below lines on a terminal that is located within the repository, I'd recommend doing this terminal integrated into an IDE (such as VSCode). 
 
 These are the setup instructions to create a Python virtual environment, install pre-requisite packages/frameworks:
 - `python3 -m venv .venv`/`python -m venv .venv` (**Pre-requisite**: Python 3.0+ must be installed on your system)
