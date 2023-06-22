@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#amount{
+    color: #000000; 
+    font-weight: bold;
+}
+
+.user-view {
+    margin: auto; 
+    width: 80%;
+}
