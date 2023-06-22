@@ -17,4 +17,6 @@ Nice job! To get the actual site up and running, run this line of code below in 
 
 Let me know if the instructions are unclear, and I can try to clarify what's happening!
 
-The screenshot for the FE is named **fe_screenshot.jpg**, and shows you a preview of what the user will see.
+Here's what the site should look like when installed correctly:
+
+![Landing Page](screenshot.jpg)
